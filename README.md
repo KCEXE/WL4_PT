@@ -1,5 +1,5 @@
 # Wario Land 4: "PT like" Moveset Conversion Patches  
-## How to use
+## How To Use
 Apply all C patches to your rom from "Patch Manager" in [Wario Land 4 editor](https://github.com/wario-land/WL4Editor).  
 
 ## Patch Download
