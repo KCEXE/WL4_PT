@@ -1,4 +1,11 @@
 # Wario Land 4: "PT like" Moveset Conversion Patches  
+
+## Included Moveset  
+- Roll (holding down while dashing)  
+- Super Jump (press up while dashing)  
+- Shoulder Bash (press left or right while super jumping)  
+- Non-stop dash direction change  
+
 ## How To Use
 Apply all C patches to your rom from "Patch Manager" in [Wario Land 4 editor](https://github.com/wario-land/WL4Editor).  
 
