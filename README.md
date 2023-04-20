@@ -16,3 +16,7 @@ Apply all C patches to the rom from "Patch Manager" in [Wario Land 4 editor](htt
 ## Patch Download
 https://github.com/becored/WL4_PT/releases/tag/v1.0  
 Download "WL4_PT_moveset_v1.0.zip" from Assets.
+
+## Credits  
+- Pizza Tower developers for awesome game  
+- WL4Editor developers for awesome tool  
