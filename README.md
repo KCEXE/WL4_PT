@@ -7,8 +7,11 @@
 - Non-stop dash direction change  
 - Ground pound during dash  
 
-## How To Use
-Apply all C patches to your rom from "Patch Manager" in [Wario Land 4 editor](https://github.com/wario-land/WL4Editor).  
+## How To Apply
+- For unmodified rom  
+Patch "WL4_custom_blocks_v1.0.bps" to a ***vanilla*** Wario Land 4(US) rom  
+- For modified rom  
+Apply all C patches to the rom from "Patch Manager" in [Wario Land 4 editor](https://github.com/wario-land/WL4Editor)  
 
 ## Patch Download
 https://github.com/becored/WL4_PT/releases/tag/v1.0  
