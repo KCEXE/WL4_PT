@@ -9,7 +9,7 @@
 
 ## How To Apply
 - For unmodified rom  
-Patch "WL4_PT_moveset_v1.0.bps" to a ***vanilla*** Wario Land 4(US) rom  
+Patch "WL4_PT_moveset_v1.1.bps" to a ***vanilla*** Wario Land 4(US) rom  
 - For modified rom  
 Apply all C patches to the rom from "Patch Manager" in [Wario Land 4 editor](https://github.com/wario-land/WL4Editor)  
 
