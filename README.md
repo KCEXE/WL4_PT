@@ -1,6 +1,6 @@
 # Wario Land 4: "PT like" Moveset Conversion Patches  
 
-## Included Moveset  
+## Including Moveset  
 - Roll (holding down during dash)  
 - Super Jump (press up during dash)  
 - Shoulder Bash (press B during super jump)  
