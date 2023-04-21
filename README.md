@@ -3,7 +3,7 @@
 ## Included Moveset  
 - Roll (holding down during dash)  
 - Super Jump (press up during dash)  
-- Shoulder Bash (press left or right during super jump)  
+- Shoulder Bash (press B during super jump)  
 - Non-stop dash direction change  
 - Ground pound during dash  
 
