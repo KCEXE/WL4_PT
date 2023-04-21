@@ -162,6 +162,7 @@ struct WHitDef
 
 // My variables
 #define dashAttackFlag (*(volatile unsigned char *)0x3006F0F)
+#define springCancel (*(volatile unsigned char *)0x3006F10)
 
 void PT_Sub_801A250_GmWarioHit_Spring()
 {
@@ -208,9 +209,10 @@ LABEL_14:
   {
     if (Wario_ucStat != 7 || v0 != 253)
     {
+      // Stopped by a ceiling
       if (WHit.ucHStop && Wario_ucStat == 2) {
         v0 = 3;
-        dashAttackFlag = 0; // Remove flag when reaching a ceiling
+        springCancel = 0; // Wario is not going up anymore
       }
       if (v0 != 255)
         Sub_801A090_GmWarioChng_Spring(v0);

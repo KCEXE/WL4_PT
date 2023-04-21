@@ -4,6 +4,8 @@
 // Mode: Thumb
 // Made by beco
 
+#define FLOATING_UP_SPEED_Y 4
+
 enum WAR_STAT_NORMAL
 {
 	WALK,	// 歩き
@@ -190,6 +192,7 @@ struct WHitDef
 
 // My variables
 #define dashAttackFlag (*(volatile unsigned char *)0x3006F0F)
+#define springCancel (*(volatile unsigned char *)0x3006F10)
 
 int PT_Sub_801A1C8_State7GmWarioMove_Spring()
 {
@@ -204,10 +207,9 @@ int PT_Sub_801A1C8_State7GmWarioMove_Spring()
 	{
 		v0 = (Wario_sMvSpeedY << 16 >> 19) & 0xFFFF;
 		if (Wario_ucStat != 2)
-			// Not falling down when transformed from super dash
-			if (dashAttackFlag == 1)
+			if (springCancel == 1)
 			{
-				Wario_sMvSpeedY = 0;
+				Wario_sMvSpeedY += FLOATING_UP_SPEED_Y; // Floating up before shifting to "Shoulder Bash"
 			}
 			else
 			{

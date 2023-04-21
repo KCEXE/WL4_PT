@@ -165,16 +165,17 @@ struct LiftDef
 
 // My variables
 #define dashAttackFlag (*(volatile unsigned char *)0x3006F0F)
+#define springCancel (*(volatile unsigned char *)0x3006F10)
 
 int PT_Sub_8019FD0_WarKeySpringEnd()
 {
-	// When transformed from super dash
-	if (dashAttackFlag == 1)
+	if (springCancel == 1)
 	{
-		if (Wario_ucAnmPat == 2) // When spring animation close to end
+		if (Wario_ucAnmPat == 2) // When spring cancel animation almost ends
 		{
 			Sub_8001DA4_m4aSongNumStart(41);
 			Wario_ucReact = 0; // Back to normal Wario
+			springCancel = 0;
 			if (Wario_usMukiX & 0x10)
 			{
 				Wario_sMvSpeedX = MAX_SPEED_X;
@@ -186,7 +187,6 @@ int PT_Sub_8019FD0_WarKeySpringEnd()
 			return DAJUMP;
 		}
 	}
-
 	if (Wario_usMukiX & 0x10)
 	{
 		Wario_sMvSpeedX = 32;

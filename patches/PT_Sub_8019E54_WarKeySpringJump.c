@@ -177,9 +177,14 @@ struct LiftDef
 #define Sub_801D684_EnemyMain ((void (*)())0x801D685)
 #define Sub_8074808_WarioHeartMake ((void (*)())0x8074809)
 
+// My variables
+#define dashAttackFlag (*(volatile unsigned char *)0x3006F0F)
+#define springCancel (*(volatile unsigned char *)0x3006F10)
+
 int PT_Sub_8019E54_WarKeySpringJump()
 {
 	if (usTrg_KeyPress1Frame[0] & KEY_B) { // Press B
+		springCancel = 1;
 		return 7; // SPRING_END
 	}
 

@@ -199,7 +199,7 @@ int PT_Sub_8011590_WarKeyDAttack()
 	}
 	if (usTrg_KeyPress1Frame[0] & KEY_UP) // press up
 	{
-		Sub_8088620_WarioVoiceSet(WV_GOAL);
+		// Sub_8088620_WarioVoiceSet(WV_GOAL);
 		Wario_ucReact = 7; // Trans form into spring Wario 
 		return 4; // Wario_ucStat = SPRING_DJUMPB
 	}

@@ -281,7 +281,7 @@ void PT_Sub_8013A98_GmWarioHit()
     default:
       break;
     }
-    if (WHit.usMukiY & 0x80 && Sub_806DAC0_PanelYakuAllNum_TileEventId(Wario_usPosY, Wario_usPosX) == 1)
+      if (WHit.usMukiY & 0x80 && (Sub_806DAC0_PanelYakuAllNum_TileEventId(Wario_usPosY, Wario_usPosX) & 0xFF) == 1)
     {
       Wario_ucReact = 1; // set swimming wario
       if (Wario_ucStat == PHIP)
