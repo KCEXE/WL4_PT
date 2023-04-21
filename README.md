@@ -14,8 +14,8 @@ Patch "WL4_PT_moveset_v1.0.bps" to a ***vanilla*** Wario Land 4(US) rom
 Apply all C patches to the rom from "Patch Manager" in [Wario Land 4 editor](https://github.com/wario-land/WL4Editor)  
 
 ## Patch Download
-https://github.com/becored/WL4_PT/releases/tag/v1.0  
-Download "WL4_PT_moveset_v1.0.zip" from Assets.
+https://github.com/becored/WL4_PT/releases/tag/v1.1  
+Download "WL4_PT_moveset_v1.1.zip" from Assets.
 
 ## Credits  
 - Pizza Tower developers for awesome game  
