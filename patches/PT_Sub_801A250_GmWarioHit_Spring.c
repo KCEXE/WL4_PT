@@ -121,6 +121,7 @@ enum WAR_STAT_SWIM
 #define Sub_8012BAC_GmWarioChng ((void (*)(unsigned char))0x8012BAD)
 #define Sub_801A090_GmWarioChng_Spring ((void (*)(unsigned char))0x801A091)
 
+#define KeyPressContinuous (*(volatile unsigned short *)0x3001844)
 #define Wario_ucReact (*(volatile unsigned char *)0x3001898)
 #define Wario_ucStat (*(volatile unsigned char *)0x3001899)
 #define Wario_ucMiss (*(volatile unsigned char *)0x300189C)
@@ -163,11 +164,13 @@ struct WHitDef
 // My variables
 #define dashAttackFlag (*(volatile unsigned char *)0x3006F0F)
 #define springCancel (*(volatile unsigned char *)0x3006F10)
+#define debugger (*(volatile unsigned char *)0x3006F20)
 
 void PT_Sub_801A250_GmWarioHit_Spring()
 {
-  signed int v0;      // r5
+  signed int v0;   // r5
   unsigned int v1; // r0
+  unsigned int v2;
 
   WHit.ucSPow = byte_82DD431[8 * Wario_ucStat + 1843];
   WHit.ucHPow = byte_82DD431[8 * Wario_ucStat + 1844];
@@ -179,6 +182,25 @@ void PT_Sub_801A250_GmWarioHit_Spring()
   if (WHit.usMukiY & 0x40)
   {
     v1 = Sub_8014C4C_WarHitUp();
+    // Enter pipe if holding up
+    if (v1 == 255 && KeyPressContinuous & 0x40 && WHit.ucHStop)
+    {
+      v2 = Sub_806DAC0_PanelYakuAllNum_TileEventId((Wario_usPosY - 128) & 0xFFFF, Wario_usPosX) >> 16;
+      if (v2 == 9)
+      {
+        Wario_usPosX = (Wario_usPosX & 0xFFC0) + 64;
+        Wario_ucReact = 0; // Back to normal Wario
+        Sub_8012BAC_GmWarioChng(DOKANU);
+        return;
+      }
+      if (v2 == 10)
+      {
+        Wario_usPosX = Wario_usPosX & 0xFFC0;
+        Wario_ucReact = 0; // Back to normal Wario
+        Sub_8012BAC_GmWarioChng(DOKANU);
+        return;
+      }
+    }
   }
   else if (WHit.usMukiY & 0x80)
   {
@@ -210,7 +232,8 @@ LABEL_14:
     if (Wario_ucStat != 7 || v0 != 253)
     {
       // Stopped by a ceiling
-      if (WHit.ucHStop && Wario_ucStat == 2) {
+      if (WHit.ucHStop && Wario_ucStat == 2)
+      {
         v0 = 3;
         springCancel = 0; // Wario is not going up anymore
       }

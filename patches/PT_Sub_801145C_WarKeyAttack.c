@@ -153,7 +153,6 @@ struct WJEffDef
 #define Sub_80711E8_GameInit_ColorSetWork_All ((void (*)())0x80711E9)
 #define Sub_806BF88_BgmChangeInit ((void (*)())0x806BF89)
 #define Sub_801D684_EnemyMain ((void (*)())0x801D685)
-#define Sub_8074808_WarioHeartMake ((void (*)()) 0
 
 int PT_Sub_801145C_WarKeyAttack()
 {
